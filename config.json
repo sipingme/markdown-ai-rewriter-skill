@@ -5,11 +5,6 @@
     "enabled": true,
     "autoInvoke": true
   },
-  "sharedKey": {
-    "enabled": true,
-    "dailyLimit": 10,
-    "provider": "openai"
-  },
   "commands": {
     "rewrite": {
       "script": "./scripts/rewrite.sh",
@@ -28,8 +23,7 @@
     ],
     "optional": [
       "OPENAI_API_KEY",
-      "ANTHROPIC_API_KEY",
-      "SHARED_OPENAI_KEY"
+      "ANTHROPIC_API_KEY"
     ]
   },
   "dependencies": {
