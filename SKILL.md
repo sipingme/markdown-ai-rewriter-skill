@@ -63,10 +63,33 @@ export ANTHROPIC_API_KEY='sk-ant-your-key-here'
 
 ---
 
-## 🎯 何时使用此 Skill
+## 🎯 如何使用此 Skill
 
-当用户需要以下操作时，应触发此 Skill：
+### ✅ 自动触发（推荐）
 
+直接告诉 AI 你的需求，Skill 会自动识别并执行：
+
+**示例 1：基础重写**
+```
+用户："帮我重写这篇文章 article.md，用轻松的风格"
+AI：识别需求 → 自动调用 Skill → 执行重写
+```
+
+**示例 2：改变风格**
+```
+用户："这篇技术文档太学术了，改成通俗易懂的风格"
+AI：判断需要重写 → 使用 casual 风格 → 保持代码和结构
+```
+
+**示例 3：新闻转博客**
+```
+用户："把这篇新闻改成博客风格，但保持原来的结构"
+AI：识别场景 → 重写内容 → 保留标题和格式
+```
+
+### 🎯 触发条件
+
+**会触发 Skill 的场景**：
 - ✅ 重写 Markdown 文章内容
 - ✅ 改变文章写作风格（正式/轻松/技术/创意）
 - ✅ 保持文章结构但改写表达
@@ -77,8 +100,31 @@ export ANTHROPIC_API_KEY='sk-ant-your-key-here'
 - "重写这篇文章"
 - "用轻松的风格改写"
 - "把这个改成正式风格"
-- "洗稿"
-- "改写但保持结构"
+- "洗稿" / "改写"
+- "改变风格但保持结构"
+- "转成博客风格"
+
+**不会触发的场景**：
+- ❌ "帮我写一篇新文章"（这是创作，不是重写）
+- ❌ "分析这篇文章的结构"（这是分析，不是重写）
+- ❌ "把 Markdown 转成 HTML"（这是格式转换）
+
+### 🔧 手动触发
+
+如果需要明确控制，可以直接指定 Skill：
+
+```
+用户："使用 markdown-ai-rewriter 重写 /path/to/article.md"
+```
+
+### 🎨 指定风格
+
+告诉 AI 你想要的风格：
+
+- **casual**（轻松）："用轻松的风格" / "口语化一点"
+- **formal**（正式）："改成正式风格" / "专业一些"
+- **technical**（技术）："保持技术性" / "用专业术语"
+- **creative**（创意）："生动一些" / "有创意的表达"
 
 ---
 
@@ -346,21 +392,134 @@ export OPENAI_API_KEY='sk-your-key-here'
 
 ---
 
-## 🎓 示例对话
+## 🎓 完整使用示例
 
-**用户**：帮我重写这篇新闻文章，用轻松的风格
+### 示例 1：零配置快速体验
 
-**AI**：好的，我来帮你重写。正在处理...
+**用户**：我有一篇技术文章 tech.md，想改成轻松的博客风格
 
-[执行命令]
+**AI**：好的！我来帮你用 AI 重写这篇文章。
+
+[自动执行]
+```bash
+markdown-ai-rewrite rewrite \
+  --input tech.md \
+  --output tech-blog.md \
+  --provider openai \
+  --style casual \
+  --verbose
+```
+
+**输出**：
+```
+ℹ️  Using shared API key (9 uses remaining today)
+🚀 Starting rewrite with openai...
+📄 Total blocks: 15
+✍️  Rewritable blocks: 8
+✅ [1/8] Rewritten paragraph
+✅ [2/8] Rewritten paragraph
+...
+✅ Rewrite complete!
+📊 Stats:
+   - Total blocks: 15
+   - Rewritten blocks: 8
+   - Output: tech-blog.md
+```
 
 **AI**：✅ 重写完成！
-- 使用共享 API Key（剩余 9/10 次）
-- 总共 15 个段落，重写了 8 个
-- 输出文件：article-rewritten.md
+- 使用共享 API Key（今天还剩 9 次）
+- 重写了 8 个段落，保留了代码块和标题结构
+- 输出文件：tech-blog.md
 - 风格：轻松口语化
 
 你可以查看重写后的文件了！
+
+---
+
+### 示例 2：配置自己的 Key
+
+**用户**：我需要经常重写文章，怎么配置自己的 API Key？
+
+**AI**：好的，我来帮你配置。请按以下步骤操作：
+
+1. 获取 OpenAI API Key：https://platform.openai.com/api-keys
+2. 添加到环境变量：
+
+```bash
+# 编辑配置文件
+nano ~/.zshrc
+
+# 添加这一行
+export OPENAI_API_KEY='sk-your-key-here'
+
+# 保存后重新加载
+source ~/.zshrc
+```
+
+配置完成后，你就可以无限制使用了！
+
+---
+
+### 示例 3：新闻转博客完整流程
+
+**用户**：帮我把这篇新闻 https://news.com/article 转成博客文章发到微信公众号
+
+**AI**：好的！我来帮你完成整个流程：
+
+**步骤 1：抓取新闻**
+```bash
+convert-url --url "https://news.com/article" --output news.md
+```
+
+**步骤 2：AI 重写（改成博客风格）**
+```bash
+markdown-ai-rewrite rewrite \
+  -i news.md \
+  -o blog.md \
+  -p openai \
+  -s casual
+```
+
+**步骤 3：发布到微信**
+```bash
+wechat-pub publish create --file blog.md --theme sports
+```
+
+✅ 完成！文章已发布到你的微信公众号。
+
+---
+
+### 示例 4：指定不同风格
+
+**用户**：这篇文章需要改成正式的商务风格
+
+**AI**：明白，我使用 formal 风格重写。
+
+```bash
+markdown-ai-rewrite rewrite \
+  -i draft.md \
+  -o formal.md \
+  -p openai \
+  -s formal
+```
+
+✅ 已改为正式商务风格！
+
+---
+
+### 示例 5：超出限额提示
+
+**用户**：重写这篇文章
+
+**AI**：
+```
+❌ 今日免费额度已用完（10/10）
+
+要继续使用，请配置你的 OpenAI API Key：
+export OPENAI_API_KEY='sk-...'
+
+或者等到明天，额度会自动重置。
+```
 
 ---
 
