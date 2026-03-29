@@ -68,7 +68,7 @@ git clone https://github.com/sipingme/markdown-ai-rewriter.git
 | GLM | `GLM_API_KEY` |
 | 豆包 | `DOUBAO_API_KEY` |
 | 文心 | `WENXIN_API_KEY` |
-| MiniMax | `MINIMAX_API_KEY`（可选 `MINIMAX_BASE_URL`，默认多为国际区 `https://api.minimax.io/v1`） |
+| MiniMax | `MINIMAX_API_KEY`（可选 `MINIMAX_BASE_URL`，默认 `https://api.minimaxi.com/v1`） |
 
 在 **Claw Hub** 中配置一次后，各 Skill 可共享同一环境变量。
 

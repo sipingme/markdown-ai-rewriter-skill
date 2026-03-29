@@ -1,7 +1,7 @@
 ---
 name: markdown-ai-rewriter
 description: 基于 markdown-ai-rewriter 的 Markdown AI 改写 Skill（保留结构、章节/全文模式、多模型）
-version: 0.3.0
+version: 0.3.1
 author: Ping Si <sipingme@gmail.com>
 user-invocable: true
 requires:
@@ -21,7 +21,7 @@ requires:
       WENXIN_API_KEY: "文心 API Key（与 --provider wenxin 对应）"
       MINIMAX_API_KEY: "MiniMax API Key（与 --provider minimax 对应；需已安装 openai 包）"
       SHARED_OPENAI_KEY: "可选：内置共享 OpenAI Key 场景使用，见下文"
-      MINIMAX_BASE_URL: "可选：MiniMax API Base URL，默认 https://api.minimax.io/v1"
+      MINIMAX_BASE_URL: "可选：MiniMax API Base URL，默认 https://api.minimaxi.com/v1"
 tags:
   - markdown
   - ai
@@ -115,7 +115,7 @@ npm install @anthropic-ai/sdk
 | `WENXIN_API_KEY` | `--provider wenxin` |
 | `MINIMAX_API_KEY` | `--provider minimax` |
 | `AZURE_OPENAI_ENDPOINT` | `azure-openai` 可选 endpoint（也可用 `--base-url`） |
-| `MINIMAX_BASE_URL` | 可选；默认 `https://api.minimax.io/v1`，国内等场景可按 MiniMax 文档调整 |
+| `MINIMAX_BASE_URL` | 可选；默认 `https://api.minimaxi.com/v1`，可按 MiniMax 文档覆盖 |
 | `SHARED_OPENAI_KEY` | 可选；仅在 **未传 `apiKey`** 且代码里允许使用共享 Key 时由库内部使用（需配合 `QuotaManager` 等逻辑，见包内 README）；**常规 CLI 用法请直接设置上述各厂商 Key。** |
 
 ---
