@@ -1,7 +1,7 @@
 {
   "skill": {
     "name": "markdown-ai-rewriter",
-    "version": "0.4.0",
+    "version": "0.5.2",
     "enabled": true,
     "autoInvoke": true
   },
@@ -15,6 +15,11 @@
       "script": "./scripts/rewrite.js",
       "args": ["check-quota"],
       "description": "检查剩余配额"
+    },
+    "help": {
+      "script": "./scripts/postinstall.js",
+      "args": [],
+      "description": "显示使用帮助和 API 配置方式"
     }
   },
   "environment": {
@@ -33,12 +38,14 @@
       "GLM_API_KEY",
       "DOUBAO_API_KEY",
       "WENXIN_API_KEY",
-      "MINIMAX_API_KEY"
+      "MINIMAX_API_KEY",
+      "KLING_API_KEY",
+      "RUNWAY_API_KEY"
     ]
   },
   "dependencies": {
     "npm": [
-      "markdown-ai-rewriter@^0.4.0"
+      "markdown-ai-rewriter@^0.5.2"
     ]
   },
   "permissions": {
