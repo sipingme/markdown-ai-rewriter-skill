@@ -1,7 +1,7 @@
 {
   "skill": {
     "name": "markdown-ai-rewriter",
-    "version": "0.5.11",
+    "version": "0.5.12",
     "enabled": true,
     "autoInvoke": true
   },
