@@ -46,8 +46,8 @@
   "install": {
     "type": "npx",
     "package": "markdown-ai-rewriter",
-    "version": "^0.5.10",
-    "execution": "npx --yes markdown-ai-rewriter@^0.5.10",
+    "version": "^0.5.12",
+    "execution": "npx --yes markdown-ai-rewriter@^0.5.12",
     "global": false,
     "autoInstall": false,
     "autoUpdate": false,
@@ -63,13 +63,13 @@
       "audit": "https://github.com/sipingme/markdown-ai-rewriter/blob/main/src/index.ts"
     },
     "verification": {
-      "command": "npx --yes markdown-ai-rewriter@^0.5.10 --version",
+      "command": "npx --yes markdown-ai-rewriter@^0.5.12 --version",
       "expectedOutput": "0.5"
     }
   },
   "dependencies": {
     "npm": [
-      "markdown-ai-rewriter@^0.5.10"
+      "markdown-ai-rewriter@^0.5.12"
     ],
     "note": "Package is executed via npx at runtime, no global installation required"
   },
