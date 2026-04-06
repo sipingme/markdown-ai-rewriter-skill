@@ -43,10 +43,35 @@
       "RUNWAY_API_KEY"
     ]
   },
+  "install": {
+    "type": "npx",
+    "package": "markdown-ai-rewriter",
+    "version": "^0.5.10",
+    "execution": "npx --yes markdown-ai-rewriter@^0.5.10",
+    "global": false,
+    "autoInstall": false,
+    "autoUpdate": false,
+    "riskLevel": "moderate",
+    "riskReason": "通过 npx 动态拉取并执行第三方 npm 包，存在供应链风险。使用前请审计源码。",
+    "requiresApproval": true,
+    "source": {
+      "type": "npm",
+      "registry": "https://registry.npmjs.org",
+      "package": "markdown-ai-rewriter",
+      "repository": "https://github.com/sipingme/markdown-ai-rewriter",
+      "license": "MIT",
+      "audit": "https://github.com/sipingme/markdown-ai-rewriter/blob/main/src/index.ts"
+    },
+    "verification": {
+      "command": "npx --yes markdown-ai-rewriter@^0.5.10 --version",
+      "expectedOutput": "0.5"
+    }
+  },
   "dependencies": {
     "npm": [
       "markdown-ai-rewriter@^0.5.10"
-    ]
+    ],
+    "note": "Package is executed via npx at runtime, no global installation required"
   },
   "permissions": {
     "filesystem": {
