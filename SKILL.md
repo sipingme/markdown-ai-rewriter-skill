@@ -1,7 +1,7 @@
 ---
 name: markdown-ai-rewriter
 description: 基于 markdown-ai-rewriter 的 Markdown AI 改写 Skill（保留结构、章节/全文模式、多模型、图片生成、视频生成）
-version: 1.1.0
+version: 1.1.1
 author: Ping Si <sipingme@gmail.com>
 user-invocable: true
 requires:
@@ -47,7 +47,7 @@ repository: https://github.com/sipingme/markdown-ai-rewriter
 
 # Markdown AI Rewriter Skill
 
-本 Skill 对应 npm 包 **[markdown-ai-rewriter](https://www.npmjs.com/package/markdown-ai-rewriter)**（当前对齐 **v1.1.0**）：在 **尽量保留标题、代码块、表格、图片等结构** 的前提下，用大模型改写正文（润色、降重、换风格等），并支持 **图片生成**（图生图）和 **视频生成**（文生视频）。
+本 Skill 对应 npm 包 **[markdown-ai-rewriter](https://www.npmjs.com/package/markdown-ai-rewriter)**（当前对齐 **v1.1.1**）：在 **尽量保留标题、代码块、表格、图片等结构** 的前提下，用大模型改写正文（润色、降重、换风格等），并支持 **图片生成**（图生图）和 **视频生成**（文生视频）。
 
 ## 🚀 安装后快速开始
 
