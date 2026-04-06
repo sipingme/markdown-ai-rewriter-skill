@@ -1,7 +1,7 @@
 ---
 name: markdown-ai-rewriter
 description: 基于 markdown-ai-rewriter 的 Markdown AI 改写 Skill（保留结构、章节/全文模式、多模型、图片生成、视频生成）
-version: 0.5.12
+version: 1.0.0
 author: Ping Si <sipingme@gmail.com>
 user-invocable: true
 requires:
