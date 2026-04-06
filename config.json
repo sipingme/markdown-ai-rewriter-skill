@@ -7,12 +7,12 @@
   },
   "commands": {
     "rewrite": {
-      "script": "./scripts/rewrite.js",
+      "script": "./scripts/run.js",
       "args": ["rewrite"],
       "description": "重写 Markdown 文件"
     },
     "check-quota": {
-      "script": "./scripts/rewrite.js",
+      "script": "./scripts/run.js",
       "args": ["check-quota"],
       "description": "检查剩余配额"
     },
