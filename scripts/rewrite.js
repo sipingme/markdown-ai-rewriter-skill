@@ -2,6 +2,9 @@
 
 const { spawnSync } = require('node:child_process');
 
+// 所需版本（与 config.json 中 dependencies.npm 保持一致）
+const REQUIRED_VERSION = '0.5.10';
+
 const command = process.argv[2];
 const args = process.argv.slice(3);
 
@@ -21,7 +24,8 @@ const run = (cmd, cmdArgs) => {
 
 switch (command) {
   case 'rewrite':
-    run('npx', ['--yes', 'markdown-ai-rewrite', 'rewrite', ...args]);
+    // 使用 npx 强制指定版本执行，自动从 registry 拉取（如有缓存则使用缓存）
+    run('npx', ['--yes', `markdown-ai-rewriter@^${REQUIRED_VERSION}`, 'rewrite', ...args]);
     break;
   case 'check-quota':
     console.log(JSON.stringify({

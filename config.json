@@ -55,6 +55,7 @@
     },
     "network": {
       "domains": [
+        "registry.npmjs.org",
         "api.openai.com",
         "api.anthropic.com",
         "*.openai.azure.com",
