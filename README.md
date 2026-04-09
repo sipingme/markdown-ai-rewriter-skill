@@ -1,6 +1,6 @@
 # Markdown AI Rewriter Skill
 
-面向 **Claw Hub** 等环境的 Skill 封装，底层使用 npm 包 **[markdown-ai-rewriter](https://www.npmjs.com/package/markdown-ai-rewriter)**（当前对齐 **v1.2.1**）：在 **尽量保留标题、代码块、表格、图片等结构** 的前提下，对 Markdown 正文做润色、降重或换表述，并支持图片、视频、音乐生成。
+面向 **Claw Hub** 等环境的 Skill 封装，底层使用 npm 包 **[markdown-ai-rewriter](https://www.npmjs.com/package/markdown-ai-rewriter)**（当前对齐 **v1.2.2**）：在 **尽量保留标题、代码块、表格、图片等结构** 的前提下，对 Markdown 正文做润色、降重或换表述，并支持图片、视频、音乐生成。
 
 ## 为什么用这个 Skill
 
