@@ -24,8 +24,8 @@ const run = (cmd, cmdArgs) => {
 
 switch (command) {
   case 'rewrite':
-    // 使用 npx 强制指定版本执行，自动从 registry 拉取（如有缓存则使用缓存）
-    run('npx', ['--yes', `markdown-ai-rewriter@^${REQUIRED_VERSION}`, 'rewrite', ...args]);
+    // 使用全局安装的 md-rewrite 命令执行
+    run('md-rewrite', ['rewrite', ...args]);
     break;
   case 'check-quota':
     console.log(JSON.stringify({
